@@ -19,10 +19,8 @@ def copy_files(src,dst,file_list):
             new_file_name =  rename(files, dst)
             dst_file_path = dst + new_file_name
 
-      #  print "Copying: " + src_file_path
     
 		
-	#for root, _, _ in os.walk(src_file_path):
 	src_file_path = src_file_path.replace("\\", "\\\\")
 	print src_file_path
 	for root, _, _ in os.walk(src_file_path):
@@ -31,10 +29,9 @@ def copy_files(src,dst,file_list):
 						shutil.copyfile(root+"\\\\"+files, dst_file_path)
 						
 						
-				#shutil.copyfile(src_file_path,dst_file_path)
 					except IOError:
 						print root + "\\\\"+ files + " does not exist"
-          #  raw_input("Please, press enter to continue.")
+    
 
 def read_file(file_name):
     f = open(file_name)
